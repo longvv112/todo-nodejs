@@ -9,6 +9,10 @@ let todoSchema = new Schema({
     done: {
         type: Boolean,
         default: false
+    },
+    user: {
+        type: Schema.ObjectId,
+        ref: "user"
     }
 });
 

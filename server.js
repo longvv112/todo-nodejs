@@ -41,7 +41,7 @@ app.engine('mustache', mustacheExpressInstance);
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views');
 
-app.use('/', todos);
+app.use('/todos', todos);
 app.use('/', user);
 
 app.listen(1234, function () {

@@ -17,6 +17,13 @@
 
 <body>
     <div class="container mt-5">
+        <p> Logged in by
+        {{#currentUser}}
+        {{username}}
+        {{/currentUser}}
+        . <a href="/logout">Logout</a>
+        </p>
+        
         <form action="/todos" method="post" class="form-inline" name="form-add">
             <input type="text" name="description" class="mx-sm-3 form-control">
             <button type="submit" class="btn btn-secondary">Add</button>
