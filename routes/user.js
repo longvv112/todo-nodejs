@@ -44,28 +44,6 @@ router.get('/login', function (req, res) {
 
 router.post('/login', loginPost);
 
-// router.post('/login', function(req, res, next){
-
-
-//     if(req.body.username && req.body.password){
-//         User.authenticate(req.body.username, req.body.password, function (error, user) {
-//             if (error || !user) {
-//               var err = new Error('Wrong email or password.');
-//               err.status = 401;
-//               return next(err);
-//             } else {
-//               req.session.userId = user._id;
-//               return res.redirect('/');
-//             }
-//           });
-
-//     }else{
-//         let err = new Error('All fields required.');
-//         err.status = 400;
-//         return next(err);
-//     }
-// });
-
 function loginPost(req, res, next) {
     passport.authenticate('local', function (err, user, info) {
         console.log(user);
@@ -91,6 +69,28 @@ function loginPost(req, res, next) {
 
     })(req, res, next);
 }
+
+// router.post('/login', function(req, res, next){
+
+
+//     if(req.body.username && req.body.password){
+//         User.authenticate(req.body.username, req.body.password, function (error, user) {
+//             if (error || !user) {
+//               var err = new Error('Wrong email or password.');
+//               err.status = 401;
+//               return next(err);
+//             } else {
+//               req.session.userId = user._id;
+//               return res.redirect('/');
+//             }
+//           });
+
+//     }else{
+//         let err = new Error('All fields required.');
+//         err.status = 400;
+//         return next(err);
+//     }
+// });
 
 
 router.get('/logout', function (req, res) {
